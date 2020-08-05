@@ -24,6 +24,9 @@ $(call inherit-product, device/oneplus/dumpling/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/ancient/config/common_full_phone.mk)
 
+# Installs gsi keys into ramdisk, to boot a GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
 PRODUCT_NAME := ancient_dumpling
 PRODUCT_DEVICE := dumpling
 PRODUCT_MANUFACTURER := OnePlus
@@ -37,10 +40,13 @@ TARGET_VENDOR_DEVICE_NAME := OnePlus5T
 
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=OnePlus5T PRODUCT_NAME=OnePlus5T
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="OnePlus5T-user 9 PKQ1.180716.001 1905271747 release-keys"
+VENDOR_SECURITY_PATCH := 2020-04-05
+PLATFORM_SECURITY_PATCH_OVERRIDE := 2020-04-05
 
-BUILD_FINGERPRINT := OnePlus/OnePlus5T/OnePlus5T:9/PKQ1.180716.001/1905271747:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="OnePlus5T-user 10 QKQ1.191014.012 2006012146 release-keys"
+
+BUILD_FINGERPRINT := OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2006012146:user/release-keys
 
 TARGET_VENDOR := oneplus
 
