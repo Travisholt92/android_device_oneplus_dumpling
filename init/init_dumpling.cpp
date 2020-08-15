@@ -69,6 +69,6 @@ void vendor_load_properties()
     };
 
     for (const auto &source : ro_props_default_source_order) {
-        set_ro_build_prop(source, "fingerprint", "OnePlus/OnePlus5T/OnePlus5T:10/QKQ1.191014.012/2006012146:user/release-keys");
+        set_ro_build_prop(source, "fingerprint", "google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys");
         }
 }
